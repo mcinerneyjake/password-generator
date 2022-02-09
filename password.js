@@ -7,6 +7,7 @@ const nums = document.getElementById("nums");
 const uppers = document.getElementById("uppers");
 const lowers = document.getElementById("lowers");
 const symbols = document.getElementById("symbols");
+const addAll = document.getElementById("add-all");
 let charset =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
 
@@ -80,6 +81,20 @@ symbols.addEventListener("change", function () {
   if (symbols.checked === true) {
     textBoxInput.textContent = retVal.valueOf("");
     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  } else {
+    textBoxInput.textContent = retVal.valueOf(btn.addEventListener);
+  }
+});
+
+addAll.addEventListener("change", function () {
+  var length = 20,
+    retVal = "";
+  for (var i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  if (addAll.checked === true) {
+    textBoxInput.textContent = retVal.valueOf("");
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
   } else {
     textBoxInput.textContent = retVal.valueOf(btn.addEventListener);
   }
